@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.accordion {
+  width: auto;
+  height: auto;
+  overflow: hidden;
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.accordion .accordion-item-header {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 20px;
+  border-bottom: 1px solid #cecece;
+  position: relative;
+  color: #666666;
+  font-weight: bold;
+}
+
+.accordion .accordion-item-header:after {
+  content: '•';
+  position: absolute;
+  right: 0;
+  display: none;
+  font-size: 14pt;
+}
+
+.accordion .accordion-item-header .accordion-item-active-marker {
+  margin-left: auto;
+}
+
+.accordion .accordion-text {
+  overflow: auto;
+  padding: 0px 10px;
+  max-height: 0;
+  transition: max-height 400ms ease-in-out;
+}
+
+.accordion .accordion-text p {
+  padding: 20px;
+  line-height: 1.68em;
+}
+
+.accordion-item:target .accordion-text {
+  max-height: 600px;
+}
+
+.accordion-item:target .accordion-item-header:after {
+  display: block;
+}
